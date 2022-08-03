@@ -12,3 +12,24 @@
 //     e.preventDefault();
 //     console.log({ type: type.value });
 // })
+// class
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes MRP. " + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+var invOne = new Invoice("Sumit", "work on the sumit web", 50000);
+var invTwo = new Invoice("Sohan", "work on the sohan web", 20000);
+// only push object of particular class
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invOne);
+console.log(invTwo);
+console.log(invoices);
