@@ -26,9 +26,9 @@
 // class
 
 class Invoice {
-    client: string;
-    details: string;
-    amount: number;
+    readonly client: string;
+    private details: string;
+    public amount: number;
     constructor(c: string, d: string, a: number) {
         this.client = c;
         this.details = d;
@@ -48,8 +48,12 @@ const invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo); 
 
-console.log(invOne)
-console.log(invTwo)
+// console.log(invOne)
+// console.log(invTwo)
+  
+// console.log(invoices);
 
-console.log(invoices);
+invoices.forEach(inv => {
+    console.log(inv.client, inv.amount, inv.format());
+});
 

@@ -30,6 +30,9 @@ var invTwo = new Invoice("Sohan", "work on the sohan web", 20000);
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invOne);
-console.log(invTwo);
-console.log(invoices);
+// console.log(invOne)
+// console.log(invTwo)
+// console.log(invoices);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
