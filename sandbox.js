@@ -8,8 +8,15 @@ var circ = function (diameter, circumference) {
     return diameter * Math.PI;
 };
 console.log(circ(5, 2));
-// types
-// boolean
-// number
-// string
-// object
+var myDetails = {
+    name: "sumit kr sharma",
+    address: "shivaji park",
+    district: "East",
+    state: "Pune",
+    country: "India"
+};
+myDetails.name = "Sohan patel";
+myDetails.landmark = "school";
+myDetails.addressList = ["asd"];
+myDetails.obj = { address1: "asd" };
+console.log(myDetails);
