@@ -42,28 +42,28 @@ console.log(circ(5, 2))
 
 // object
 
-type myDetailType =  {
-    name: string,
-    address: string,    
-    district: string,
-    state: string,
-    country: string,
-    landmark?: string,
-    addressList?: string[],
-    obj?: {address1: string}
-}
+// type myDetailType =  {
+//     name: string,
+//     address: string,    
+//     district: string,
+//     state: string,
+//     country: string,
+//     landmark?: string,
+//     addressList?: string[],
+//     obj?: {address1: string}
+// }
 
-const myDetails: myDetailType = {
-    name: "sumit kr sharma",
-    address: "shivaji park",
-    district: "East",
-    state: "Pune",
-    country: "India"
-}
+// const myDetails: myDetailType = {
+//     name: "sumit kr sharma",
+//     address: "shivaji park",
+//     district: "East",
+//     state: "Pune",
+//     country: "India"
+// }
 
-myDetails.name = "Sohan patel";
-myDetails.landmark = "school";
-myDetails.addressList = ["asd"];
-myDetails.obj = { address1: "asd" };
-console.log(myDetails);
+// myDetails.name = "Sohan patel";
+// myDetails.landmark = "school";
+// myDetails.addressList = ["asd"];
+// myDetails.obj = { address1: "asd" };
+// console.log(myDetails);
 
