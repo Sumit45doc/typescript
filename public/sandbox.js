@@ -1,14 +1,13 @@
 "use strict";
-var toPerson;
-toPerson = 'sumit kumar sharma';
-var elem = document.getElementById('enter');
-elem.innerText = toPerson;
-var circ = function (diameter, circumference) {
-    if (circumference)
-        return circumference;
-    return diameter * Math.PI;
-};
-console.log(circ(5, 2));
+// let toPerson: string;
+// toPerson = 'sumit kumar sharma';
+// const elem = document.getElementById('enter') as HTMLDivElement;
+// elem.innerText = toPerson;
+// const circ = (diameter: number, circumference?: number): number => {
+//     if(circumference) return circumference
+//     return diameter * Math.PI;
+// }
+// console.log(circ(5, 2))
 // types
 // boolean
 // number
@@ -51,3 +50,12 @@ console.log(circ(5, 2));
 // myDetails.addressList = ["asd"];
 // myDetails.obj = { address1: "asd" };
 // console.log(myDetails);
+var greet;
+greet = function () {
+    console.log('function');
+};
+greet();
+var add = function (a, b) {
+    console.log(a + b);
+};
+add(1, 1);

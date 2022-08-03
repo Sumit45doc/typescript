@@ -1,16 +1,16 @@
-let toPerson: string;
-toPerson = 'sumit kumar sharma';
-const elem = document.getElementById('enter') as HTMLDivElement;
-elem.innerText = toPerson;
+// let toPerson: string;
+// toPerson = 'sumit kumar sharma';
+// const elem = document.getElementById('enter') as HTMLDivElement;
+// elem.innerText = toPerson;
 
 
-const circ = (diameter: number, circumference?: number): number => {
-    if(circumference) return circumference
-    return diameter * Math.PI;
-}
+// const circ = (diameter: number, circumference?: number): number => {
+//     if(circumference) return circumference
+//     return diameter * Math.PI;
+// }
 
 
-console.log(circ(5, 2))
+// console.log(circ(5, 2))
 
 // types
 // boolean
@@ -67,3 +67,16 @@ console.log(circ(5, 2))
 // myDetails.obj = { address1: "asd" };
 // console.log(myDetails);
 
+let greet: Function;
+greet = () => {
+    console.log('function');
+}
+
+greet()
+
+
+const add = (a: number, b: number): void => {
+    console.log(a + b)
+}
+
+add(1, 1);
