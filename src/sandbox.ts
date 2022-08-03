@@ -84,20 +84,21 @@
 
 // function signatures
 
-let minus: (a: number, b: number) => number;
+// let minus: (a: number, b: number) => number;
 
-minus = (high, low) => {
-    return high - low;
-}
+// minus = (high, low) => {
+//     return high - low;
+// }
 
-console.log(minus(10, 5))
+// console.log(minus(10, 5))
 
 
 
-type getAddAliases = (a: number, b: number) => void;
+// type getAddAliases = (a: number, b: number) => void;
 
-const min: getAddAliases = (high, low) => {
-    console.log(high - low);
-};
+// const min: getAddAliases = (high, low) => {
+//     console.log(high - low);
+// };
 
-min(5, 2);
+// min(5, 2);
+
