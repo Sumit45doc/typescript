@@ -50,12 +50,23 @@
 // myDetails.addressList = ["asd"];
 // myDetails.obj = { address1: "asd" };
 // console.log(myDetails);
-var greet;
-greet = function () {
-    console.log('function');
+//function
+// let greet: Function;
+// greet = () => {
+//     console.log('function');
+// }
+// greet()
+// const add = (a: number, b: number): void => {
+//     console.log(a + b)
+// }
+// add(1, 1);
+// function signatures
+var minus;
+minus = function (high, low) {
+    return high - low;
 };
-greet();
-var add = function (a, b) {
-    console.log(a + b);
+console.log(minus(10, 5));
+var min = function (high, low) {
+    console.log(high - low);
 };
-add(1, 1);
+min(5, 2);
