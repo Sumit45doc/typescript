@@ -1,31 +1,42 @@
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import HasFormatter from './interfaces/HasFormatter.js';
 // DOM type casting
 
 // const anchor = document.querySelector('a') as HTMLAnchorElement;
 // console.log(anchor.href);
 
 
-// const form = document.querySelector('.new-item-form')  as HTMLFormElement;
+const form = document.querySelector('.new-item-form')  as HTMLFormElement;
 // console.log(form.children);
 
 
-// const type = document.querySelector('#type') as HTMLSelectElement;
-// const toFrom = document.querySelector('#tofrom') as HTMLInputElement;
-// const details = document.querySelector('#details') as HTMLInputElement;
-// const amount = document.querySelector('#amount') as HTMLInputElement;
+const type = document.querySelector('#type') as HTMLSelectElement;
+const toFrom = document.querySelector('#tofrom') as HTMLInputElement;
+const details = document.querySelector('#details') as HTMLInputElement;
+const amount = document.querySelector('#amount') as HTMLInputElement;
 
 
-// form.addEventListener('submit', (e: Event) => {
-//     e.preventDefault();
+form.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
 
-//     console.log({ type: type.value });
+    let doc: HasFormatter;
+
+    if (type.value === 'invoice') {
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    } else {
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
 
 
-// })
+    console.log(doc);
+
+
+})
 
 
 // class
 
-import { Invoice } from './classes/Invoice.js';
 
 const invOne = new Invoice("Sumit", "work on the sumit web", 50000);
 const invTwo = new Invoice("Sohan", "work on the sohan web", 20000);
@@ -35,34 +46,34 @@ const invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo); 
 
-// console.log(invOne)
+// console.log(invOne) 
 // console.log(invTwo)
   
 // console.log(invoices);
 
-invoices.forEach(inv => {
-    console.log(inv.client, inv.amount, inv.format());
-});
+// invoices.forEach(inv => {
+//     console.log(inv.client, inv.amount, inv.format());
+// });
 
 // interfaces
-interface Person {
-    name: string;
-    age: number;
-    speak: (a: string) => void;
-    spend: (a: number) => number;
-};
+// interface Person {
+//     name: string;
+//     age: number;
+//     speak: (a: string) => void;
+//     spend: (a: number) => number;
+// };
 
 
-const me: Person = {
-    name: "Sumit kumar sharma",
-    age: 10,
-    speak(msg) {
-        console.log(msg);
-    },
-    spend(num) {
-        console.log(num);
-        return num
-    }
-};
+// const me: Person = {
+//     name: "Sumit kumar sharma",
+//     age: 10,
+//     speak(msg) {
+//         console.log(msg);
+//     },
+//     spend(num) {
+//         console.log(num);
+//         return num
+//     }
+// };
 
-console.log(me.speak("Hello tsc. Loving you so much"));
+// console.log(me.speak("Hello tsc. Loving you so much"));
