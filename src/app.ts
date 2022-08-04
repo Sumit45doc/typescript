@@ -25,7 +25,7 @@
 
 // class
 
-import { Invoice } from './classes/Invoice';
+import { Invoice } from './classes/Invoice.js';
 
 const invOne = new Invoice("Sumit", "work on the sumit web", 50000);
 const invTwo = new Invoice("Sohan", "work on the sohan web", 20000);
@@ -44,3 +44,25 @@ invoices.forEach(inv => {
     console.log(inv.client, inv.amount, inv.format());
 });
 
+// interfaces
+interface Person {
+    name: string;
+    age: number;
+    speak: (a: string) => void;
+    spend: (a: number) => number;
+};
+
+
+const me: Person = {
+    name: "Sumit kumar sharma",
+    age: 10,
+    speak(msg) {
+        console.log(msg);
+    },
+    spend(num) {
+        console.log(num);
+        return num
+    }
+};
+
+console.log(me.speak("Hello tsc. Loving you so much"));
