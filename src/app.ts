@@ -25,20 +25,7 @@
 
 // class
 
-class Invoice {
-    readonly client: string;
-    private details: string;
-    public amount: number;
-    constructor(c: string, d: string, a: number) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    } 
-
-    format() {
-        return `${this.client} owes MRP. ${this.amount} for ${this.details}`
-    }
-}
+import { Invoice } from './classes/Invoice';
 
 const invOne = new Invoice("Sumit", "work on the sumit web", 50000);
 const invTwo = new Invoice("Sohan", "work on the sohan web", 20000);
