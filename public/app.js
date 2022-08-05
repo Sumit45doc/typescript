@@ -55,3 +55,20 @@ invoices.push(invTwo);
 //     }
 // };
 // console.log(me.speak("Hello tsc. Loving you so much"));
+// generics
+const addUID = (obj) => {
+    let uid = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { uid });
+};
+let docOne = addUID({ name: 'sumit', age: 2 });
+console.log(docOne.name);
+const docTwo = {
+    uid: 2,
+    ResourceName: 'person',
+    data: { age: 4 }
+};
+const docThree = {
+    uid: 2,
+    ResourceName: 'person',
+    data: 'shooping complex'
+};

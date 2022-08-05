@@ -79,3 +79,36 @@ invoices.push(invTwo);
 // };
 
 // console.log(me.speak("Hello tsc. Loving you so much"));
+
+
+
+// generics
+
+const addUID = <T extends {age: number}>(obj: T) => {
+    let uid = Math.floor(Math.random() * 100);
+    return { ...obj, uid };
+}
+
+let docOne = addUID({ name: 'sumit', age: 2 });
+console.log(docOne.name);
+
+
+
+interface Resource<T> {
+    uid: number;
+    ResourceName: string;
+    data: T;
+}
+
+
+
+const docTwo: Resource<{age: number}> = {
+    uid: 2,
+    ResourceName: 'person',
+    data: {age: 4}
+}
+const docThree: Resource<string> = {
+    uid: 2,
+    ResourceName: 'person',
+    data: 'shooping complex'
+}
