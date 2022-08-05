@@ -117,5 +117,5 @@ invoices.push(invTwo);
 
 
 // tuples
-let tup: [string, number, boolean] = ['sumit', 40, true];
-tup[0] = "sharma"; 
+// let tup: [string, number, boolean] = ['sumit', 40, true];
+// tup[0] = "sharma";

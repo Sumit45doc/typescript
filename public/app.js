@@ -79,5 +79,5 @@ invoices.push(invTwo);
 //     data: 'shooping complex'
 // }
 // tuples
-let tup = ['sumit', 40, true];
-tup[0] = "sharma";
+// let tup: [string, number, boolean] = ['sumit', 40, true];
+// tup[0] = "sharma";
