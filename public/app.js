@@ -15,11 +15,12 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let doc;
+    let values = [toFrom.value, details.value, amount.valueAsNumber];
     if (type.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, 'end');
 });
@@ -56,19 +57,27 @@ invoices.push(invTwo);
 // };
 // console.log(me.speak("Hello tsc. Loving you so much"));
 // generics
-const addUID = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
-};
-let docOne = addUID({ name: 'sumit', age: 2 });
-console.log(docOne.name);
-const docTwo = {
-    uid: 2,
-    ResourceName: 'person',
-    data: { age: 4 }
-};
-const docThree = {
-    uid: 2,
-    ResourceName: 'person',
-    data: 'shooping complex'
-};
+// const addUID = <T extends {age: number}>(obj: T) => {
+//     let uid = Math.floor(Math.random() * 100);
+//     return { ...obj, uid };
+// }
+// let docOne = addUID({ name: 'sumit', age: 2 });
+// console.log(docOne.name);
+// interface Resource<T> {
+//     uid: number;
+//     ResourceName: string;
+//     data: T;
+// }
+// const docTwo: Resource<{age: number}> = {
+//     uid: 2,
+//     ResourceName: 'person',
+//     data: {age: 4}
+// }
+// const docThree: Resource<string> = {
+//     uid: 2,
+//     ResourceName: 'person',
+//     data: 'shooping complex'
+// }
+// tuples
+let tup = ['sumit', 40, true];
+tup[0] = "sharma";

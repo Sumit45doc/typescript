@@ -25,10 +25,12 @@ form.addEventListener('submit', (e: Event) => {
 
     let doc: HasFormatter;
 
+    let values: [string, string, number] = [toFrom.value, details.value, amount.valueAsNumber];
+
     if (type.value === 'invoice') {
-        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     } else {
-        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
 
 
@@ -83,32 +85,37 @@ invoices.push(invTwo);
 
 
 // generics
+ 
+// const addUID = <T extends {age: number}>(obj: T) => {
+//     let uid = Math.floor(Math.random() * 100);
+//     return { ...obj, uid };
+// }
 
-const addUID = <T extends {age: number}>(obj: T) => {
-    let uid = Math.floor(Math.random() * 100);
-    return { ...obj, uid };
-}
-
-let docOne = addUID({ name: 'sumit', age: 2 });
-console.log(docOne.name);
-
-
-
-interface Resource<T> {
-    uid: number;
-    ResourceName: string;
-    data: T;
-}
+// let docOne = addUID({ name: 'sumit', age: 2 });
+// console.log(docOne.name);
 
 
 
-const docTwo: Resource<{age: number}> = {
-    uid: 2,
-    ResourceName: 'person',
-    data: {age: 4}
-}
-const docThree: Resource<string> = {
-    uid: 2,
-    ResourceName: 'person',
-    data: 'shooping complex'
-}
+// interface Resource<T> {
+//     uid: number;
+//     ResourceName: string;
+//     data: T;
+// }
+
+
+
+// const docTwo: Resource<{age: number}> = {
+//     uid: 2,
+//     ResourceName: 'person',
+//     data: {age: 4}
+// }
+// const docThree: Resource<string> = {
+//     uid: 2,
+//     ResourceName: 'person',
+//     data: 'shooping complex'
+// }
+
+
+// tuples
+let tup: [string, number, boolean] = ['sumit', 40, true];
+tup[0] = "sharma"; 
